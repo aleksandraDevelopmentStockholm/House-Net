@@ -1,0 +1,66 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Override Radix Themes default text color */
+.radix-themes {
+  --gray-12: #1e5128; /* Dark green for main text in light mode */
+}
+
+.radix-themes.dark {
+  --gray-12: #f7fff5af; /* Dark green for main text in light mode */
+  --gray-a10: #f7fff5af;
+}
+
+/* Focus indicators for keyboard navigation */
+
+/* Ensure links and buttons have visible focus */
+a:focus-visible,
+button:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent-9);
+  outline-offset: 1px;
+}
+
+/* Skip Navigation Links */
+.skip-navigation {
+  height: 0;
+  overflow: hidden;
+}
+
+.skip-navigation:focus-within {
+  height: fit-content;
+  padding: 24px 0;
+  background: var(--accent-12);
+}
+
+@media (min-width: 1240px) {
+  .skip-navigation {
+    background: var(--accent-12);
+  }
+}
+
+.skip-link {
+  color: var(--gray-1);
+  font-weight: 500;
+  height: 1px;
+  margin: 0 16px;
+  overflow: hidden;
+  top: auto;
+  width: 1px;
+  text-decoration: none;
+}
